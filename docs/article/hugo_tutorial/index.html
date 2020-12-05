@@ -7,7 +7,8 @@
     <title>Hugoを用いたユーザページ作成 | My Page</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="Contents Hugoのインストール Hugo(Github)からWindows-64bitをダウンロードし，c:\User\USERNAME\hugo\に展開，Pathを通す． （CMDから動くか確認）
-Git管理下でページ作成 hugo new site PROJECTNAMEでプロジェクト作成 プロジェクトフォルダに移動しconfigの設定 hugo new path/fileでPROJECTNAME/ContentDir/pathにfileが作成される
+Git管理下でページ作成 hugo new site PROJECTNAMEでプロジェクト作成 プロジェクトフォルダに移動しconfigの設定 hugo new path/fileでPROJECTNAME/ContentDir/pathにfileが作成される configでpublishフォルダをdocsに指定することでdocsにhtmlが作成される Github側でdocsをソースに指定すればよい
+画像ファイル static/imagesに配置 configから指定可能
 参考  https://www.membersedge.co.jp/blog/create-hugo-theme-and-deploy-to-github-pages/ https://gohugo.io/  ">
     <meta name="generator" content="Hugo 0.79.0" />
     
@@ -31,7 +32,8 @@ Git管理下でページ作成 hugo new site PROJECTNAMEでプロジェクト作
     
     <meta property="og:title" content="Hugoを用いたユーザページ作成" />
 <meta property="og:description" content="Contents Hugoのインストール Hugo(Github)からWindows-64bitをダウンロードし，c:\User\USERNAME\hugo\に展開，Pathを通す． （CMDから動くか確認）
-Git管理下でページ作成 hugo new site PROJECTNAMEでプロジェクト作成 プロジェクトフォルダに移動しconfigの設定 hugo new path/fileでPROJECTNAME/ContentDir/pathにfileが作成される
+Git管理下でページ作成 hugo new site PROJECTNAMEでプロジェクト作成 プロジェクトフォルダに移動しconfigの設定 hugo new path/fileでPROJECTNAME/ContentDir/pathにfileが作成される configでpublishフォルダをdocsに指定することでdocsにhtmlが作成される Github側でdocsをソースに指定すればよい
+画像ファイル static/imagesに配置 configから指定可能
 参考  https://www.membersedge.co.jp/blog/create-hugo-theme-and-deploy-to-github-pages/ https://gohugo.io/  " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kayanoma.github.io/article/hugo_tutorial/" />
@@ -39,11 +41,12 @@ Git管理下でページ作成 hugo new site PROJECTNAMEでプロジェクト作
 <meta property="article:modified_time" content="2020-12-05T16:35:03+09:00" />
 <meta itemprop="name" content="Hugoを用いたユーザページ作成">
 <meta itemprop="description" content="Contents Hugoのインストール Hugo(Github)からWindows-64bitをダウンロードし，c:\User\USERNAME\hugo\に展開，Pathを通す． （CMDから動くか確認）
-Git管理下でページ作成 hugo new site PROJECTNAMEでプロジェクト作成 プロジェクトフォルダに移動しconfigの設定 hugo new path/fileでPROJECTNAME/ContentDir/pathにfileが作成される
+Git管理下でページ作成 hugo new site PROJECTNAMEでプロジェクト作成 プロジェクトフォルダに移動しconfigの設定 hugo new path/fileでPROJECTNAME/ContentDir/pathにfileが作成される configでpublishフォルダをdocsに指定することでdocsにhtmlが作成される Github側でdocsをソースに指定すればよい
+画像ファイル static/imagesに配置 configから指定可能
 参考  https://www.membersedge.co.jp/blog/create-hugo-theme-and-deploy-to-github-pages/ https://gohugo.io/  ">
 <meta itemprop="datePublished" content="2020-12-05T16:35:03+09:00" />
 <meta itemprop="dateModified" content="2020-12-05T16:35:03+09:00" />
-<meta itemprop="wordCount" content="16">
+<meta itemprop="wordCount" content="21">
 
 
 
@@ -51,7 +54,8 @@ Git管理下でページ作成 hugo new site PROJECTNAMEでプロジェクト作
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Hugoを用いたユーザページ作成"/>
 <meta name="twitter:description" content="Contents Hugoのインストール Hugo(Github)からWindows-64bitをダウンロードし，c:\User\USERNAME\hugo\に展開，Pathを通す． （CMDから動くか確認）
-Git管理下でページ作成 hugo new site PROJECTNAMEでプロジェクト作成 プロジェクトフォルダに移動しconfigの設定 hugo new path/fileでPROJECTNAME/ContentDir/pathにfileが作成される
+Git管理下でページ作成 hugo new site PROJECTNAMEでプロジェクト作成 プロジェクトフォルダに移動しconfigの設定 hugo new path/fileでPROJECTNAME/ContentDir/pathにfileが作成される configでpublishフォルダをdocsに指定することでdocsにhtmlが作成される Github側でdocsをソースに指定すればよい
+画像ファイル static/imagesに配置 configから指定可能
 参考  https://www.membersedge.co.jp/blog/create-hugo-theme-and-deploy-to-github-pages/ https://gohugo.io/  "/>
 
 	
@@ -173,7 +177,12 @@ Git管理下でページ作成 hugo new site PROJECTNAMEでプロジェクト作
 <h2 id="git管理下でページ作成">Git管理下でページ作成</h2>
 <p><code>hugo new site PROJECTNAME</code>でプロジェクト作成
 プロジェクトフォルダに移動しconfigの設定
-<code>hugo new path/file</code>で<code>PROJECTNAME/ContentDir/path</code>にfileが作成される</p>
+<code>hugo new path/file</code>で<code>PROJECTNAME/ContentDir/path</code>にfileが作成される
+configでpublishフォルダをdocsに指定することでdocsにhtmlが作成される
+Github側でdocsをソースに指定すればよい</p>
+<h2 id="画像ファイル">画像ファイル</h2>
+<p><code>static/images</code>に配置
+configから指定可能</p>
 <h2 id="参考">参考</h2>
 <ul>
 <li><a href="https://www.membersedge.co.jp/blog/create-hugo-theme-and-deploy-to-github-pages/">https://www.membersedge.co.jp/blog/create-hugo-theme-and-deploy-to-github-pages/</a></li>

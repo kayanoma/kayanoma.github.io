@@ -11,6 +11,12 @@ tags: ["Hugo", "GithubPages"]
 `hugo new site PROJECTNAME`でプロジェクト作成
 プロジェクトフォルダに移動しconfigの設定
 `hugo new path/file`で`PROJECTNAME/ContentDir/path`にfileが作成される
+configでpublishフォルダをdocsに指定することでdocsにhtmlが作成される
+Github側でdocsをソースに指定すればよい
+
+## 画像ファイル
+`static/images`に配置
+configから指定可能
 
 
 ## 参考
