@@ -1,6 +1,6 @@
 baseURL = "https://kayanoma.github.io"
 languageCode = "ja"
-title = "My Page"
+title = "kayaryou"
 contentDir = "post"
 disableKinds = ["RSS", "sitemap"]
 theme = "ananke"
